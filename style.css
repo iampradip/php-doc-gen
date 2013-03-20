@@ -1,0 +1,48 @@
+/* 
+	Author: Pradip Vadher.
+	There are more classes than defined in this stylesheet.
+*/
+.extension,
+.ini_entry, 
+.interface,
+.class,
+.function,
+.constant,
+.variable,
+.identifier,
+.code {
+	font-family: monospace;
+	font-size: 11pt;
+}
+.code {
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+.keyword {
+	color: green;
+}
+.identifier {
+	color: blue;
+}
+.value {
+	color: red;
+}
+.classname {
+	font-weight: bold;
+}
+.comment {
+	color: #aaa;
+	font-style: italic;
+}
+.inaccessible {
+	text-decoration: line-through;
+}
+.deprecated a .identifier{
+	color: #aaa;
+}
+.operator {
+	color: #008;
+}
+.section {
+	color: #444;
+}
