@@ -1,4 +1,4 @@
-// Author: Pradip Vadher.
+// Author: Pradip Vadher
 var change_visibility = function (className, value){
 	var elements = document.getElementsByClassName(className);
 	for(var i = 0; i < elements.length; i++){

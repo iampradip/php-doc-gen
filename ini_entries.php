@@ -1,5 +1,4 @@
-<!-- Author: Pradip Vadher. -->
-<html>
+<!-- Author: Pradip Vadher --><html>
 	<head>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<script src="highlight_hash.js"></script>
@@ -8,6 +7,9 @@
 		<h2>INI Entries</h2>
 	<?php
 		if(isset($_GET['extension'])){
+			if(isset($_GET['dl'])){
+				dl($_GET['dl']);
+			}
 			$ini_entries = 0;
 			if($_GET['extension'] === ""){
 				$ini_entries = ini_get_all(NULL, FALSE);

@@ -1,7 +1,13 @@
 /* 
-	Author: Pradip Vadher.
+	Author: Pradip Vadher
+	
 	There are more classes than defined in this stylesheet.
 */
+form.extension_add {
+	border: 1px solid #ddd;
+	padding: 2px;
+	margin: 2px;
+}
 .extension,
 .ini_entry, 
 .interface,

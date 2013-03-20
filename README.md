@@ -4,3 +4,32 @@ php-doc-gen
 ===========
 
 This script will generate PHP code for defined classes, functions, constants, etc. from extensions or included files. Interface is somewhat similar to javadocs.
+
+An example
+
+```php
+class PDOException extends RuntimeException {
+
+   /* Properties */ 
+   protected $message ;
+   protected $code ;
+   protected $file ;
+   protected $line ;
+   public $errorInfo ;
+
+   /* Methods */ 
+   private function __clone() {}
+   public function __construct($message = '<internal-value>', $code = '<internal-value>', $previous = '<internal-value>') {
+      /* Constructor Implementation */ 
+   }
+   public function getMessage() {}
+   public function getCode() {}
+   public function getFile() {}
+   public function getLine() {}
+   public function getTrace() {}
+   public function getPrevious() {}
+   public function getTraceAsString() {}
+   public function __toString() {}
+
+} 
+```

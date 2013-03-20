@@ -1,5 +1,4 @@
-<!-- Author: Pradip Vadher. -->
-<html>
+<!-- Author: Pradip Vadher --><html>
 	<head>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 	</head>
@@ -10,6 +9,10 @@
 				$extension = $_GET['extension'];
 			}
 			output_add_rewrite_var("extension", $extension);
+			if(isset($_GET['dl'])){
+				dl($_GET['dl']);
+				output_add_rewrite_var("dl", $_GET['dl']);
+			}
 			$classes = 0;
 			$interfaces = 0;
 			$constants = 0;

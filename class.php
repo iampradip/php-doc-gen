@@ -1,5 +1,4 @@
-<!-- Author: Pradip Vadher. -->
-<html>
+<!-- Author: Pradip Vadher --><html>
 	<head>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<script src="highlight_hash.js"></script>
@@ -15,6 +14,9 @@
 	<?php
 		require "code_functions.php";
 		if(isset($_GET['extension'], $_GET['class'])){
+			if(isset($_GET['dl'])){
+				dl($_GET['dl']);
+			}
 			add_included_files();
 			if($_GET['extension'] === ""){
 				$class = new ReflectionClass($_GET['class']);

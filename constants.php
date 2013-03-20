@@ -1,5 +1,4 @@
-<!-- Author: Pradip Vadher. -->
-<html>
+<!-- Author: Pradip Vadher --><html>
 	<head>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<script src="highlight_hash.js"></script>
@@ -8,6 +7,9 @@
 		<h2>Constants</h2>
 	<?php
 		if(isset($_GET['extension'])){
+			if(isset($_GET['dl'])){
+				dl($_GET['dl']);
+			}
 			$constants = 0;
 			if($_GET['extension'] === ""){
 				$constants = get_defined_constants(FALSE);

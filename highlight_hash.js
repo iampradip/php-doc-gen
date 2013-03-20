@@ -1,4 +1,4 @@
-// Author: Pradip Vadher.
+// Author: Pradip Vadher
 var last_hash = "";
 setInterval(function (){
 	var hash = location.hash;

@@ -1,6 +1,5 @@
 <?php
-// Author: Pradip Vadher.
-
+// Author: Pradip Vadher
 function add_included_files(){
 	if(isset($_GET['include_files']) && !empty($_GET['include_files'])){
 		$include_files = explode(";", $_GET['include_files']);
@@ -34,7 +33,7 @@ function value($value, $add_space = TRUE){
 	//ob_start();
 	//var_dump($value);
 	//echo trim(ob_get_clean());
-	echo var_export($value, TRUE);
+	echo htmlentities(var_export($value, TRUE));
 	echo "</span>";
 }
 function ini_value($value, $add_space = TRUE){
@@ -177,15 +176,25 @@ function display_function($method, $indent = 1){
 	} else {
 		bracket("(", FALSE);
 	}
+	$required_arguments = $method->getNumberOfRequiredParameters();
 	for($i = 0; $i < $count; $i++){
 		$parameter = $parameters[$i];
 		if($parameter->isPassedByReference()){
 			operator("&", FALSE);
 		}
-		identifier($parameter->getName(), TRUE, $parameter->isDefaultValueAvailable());
-		if($parameter->isDefaultValueAvailable()){
+		$is_optional = $parameter->isDefaultValueAvailable() || $i >= $required_arguments;
+		identifier($parameter->getName(), TRUE, $is_optional);
+		if($is_optional){
 			operator("=");
-			value($parameter->getDefaultValue(), FALSE);
+			try{
+				value($parameter->getDefaultValue(), FALSE);
+			}catch(ReflectionException $e){
+				if(strpos($e->getMessage(), "Cannot determine default value for internal functions") !== FALSE){
+					value("<internal-value>", FALSE);
+				} else {
+					value("<?>", FALSE);
+				}
+			}
 		}
 		if($i !== $count - 1)
 			comma();

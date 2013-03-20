@@ -1,5 +1,4 @@
-<!-- Author: Pradip Vadher. -->
-<html>
+<!-- Author: Pradip Vadher --><html>
 	<head>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<script src="highlight_hash.js"></script>
